@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 263
-  Top = 174
+  Left = 261
+  Top = 177
   Width = 759
   Height = 423
   Caption = 'LOGIN'
@@ -49,6 +49,7 @@ object Form1: TForm1
     Height = 33
     Caption = 'Login'
     TabOrder = 1
+    OnClick = btnLoginClick
   end
   object edtUsername: TEdit
     Left = 296
@@ -63,5 +64,18 @@ object Form1: TForm1
     Width = 193
     Height = 21
     TabOrder = 3
+  end
+  object ZQuery1: TZQuery
+    Connection = Form2.ZConnection1
+    SQL.Strings = (
+      'SELECT * from user')
+    Params = <>
+    Left = 56
+    Top = 64
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 56
+    Top = 128
   end
 end

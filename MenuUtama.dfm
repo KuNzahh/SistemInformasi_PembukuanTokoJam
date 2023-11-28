@@ -1,15 +1,16 @@
 object Form2: TForm2
-  Left = 326
-  Top = 183
+  Left = 366
+  Top = 196
   Width = 795
   Height = 423
-  Caption = 'MAIN MENU'
+  Caption = 'Menu Utama'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
@@ -39,7 +40,11 @@ object Form2: TForm2
     LibraryLocation = 
       'D:\FOLDER KULIAH\KULIAH SEMESTER 5\PEMROGRAMAN VISUAL 3\ProyekAk' +
       'hir\libmysql.dll'
-    Left = 80
-    Top = 192
+    Left = 48
+    Top = 104
+  end
+  object MainMenu1: TMainMenu
+    Left = 48
+    Top = 40
   end
 end

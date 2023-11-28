@@ -4,12 +4,13 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ZAbstractConnection, ZConnection, StdCtrls;
+  Dialogs, ZAbstractConnection, ZConnection, StdCtrls, Menus;
 
 type
   TForm2 = class(TForm)
     lbl1: TLabel;
     ZConnection1: TZConnection;
+    MainMenu1: TMainMenu;
   private
     { Private declarations }
   public
