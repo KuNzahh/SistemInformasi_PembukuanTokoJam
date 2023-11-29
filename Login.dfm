@@ -1,8 +1,8 @@
 object Form1: TForm1
   Left = 261
-  Top = 177
-  Width = 759
-  Height = 423
+  Top = 214
+  Width = 686
+  Height = 377
   Caption = 'LOGIN'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,53 +14,54 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object USERNAME: TLabel
-    Left = 200
-    Top = 120
+    Left = 184
+    Top = 88
     Width = 54
     Height = 13
     Caption = 'USERNAME'
   end
   object Password: TLabel
-    Left = 200
-    Top = 168
+    Left = 184
+    Top = 136
     Width = 57
     Height = 13
     Caption = 'PASSWORD'
   end
   object LOGIN: TLabel
-    Left = 320
-    Top = 64
-    Width = 60
+    Left = 304
+    Top = 32
+    Width = 91
     Height = 13
-    Caption = 'LOGIN USER'
+    Caption = 'MASUK PENGGUNA'
   end
   object btnRegis: TButton
-    Left = 232
-    Top = 248
+    Left = 216
+    Top = 216
     Width = 97
     Height = 33
-    Caption = 'Register'
+    Caption = 'DAFTAR'
     TabOrder = 0
+    OnClick = btnRegisClick
   end
   object btnLogin: TButton
-    Left = 376
-    Top = 248
+    Left = 360
+    Top = 216
     Width = 97
     Height = 33
-    Caption = 'Login'
+    Caption = 'MASUK'
     TabOrder = 1
     OnClick = btnLoginClick
   end
   object edtUsername: TEdit
-    Left = 296
-    Top = 120
+    Left = 280
+    Top = 88
     Width = 193
     Height = 21
     TabOrder = 2
   end
   object edtPassword: TEdit
-    Left = 296
-    Top = 168
+    Left = 280
+    Top = 136
     Width = 193
     Height = 21
     TabOrder = 3
@@ -70,12 +71,12 @@ object Form1: TForm1
     SQL.Strings = (
       'SELECT * from user')
     Params = <>
-    Left = 56
-    Top = 64
+    Left = 96
+    Top = 72
   end
-  object DataSource1: TDataSource
+  object dsUser: TDataSource
     DataSet = ZQuery1
-    Left = 56
+    Left = 96
     Top = 128
   end
 end

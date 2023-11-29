@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 366
-  Top = 196
+  Left = 282
+  Top = 191
   Width = 795
   Height = 423
   Caption = 'Menu Utama'
@@ -15,8 +15,8 @@ object Form2: TForm2
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
-    Left = 104
-    Top = 128
+    Left = 96
+    Top = 144
     Width = 606
     Height = 39
     Caption = 'SELAMAT DATANG DI SISTEM INFORMASI'
@@ -40,11 +40,45 @@ object Form2: TForm2
     LibraryLocation = 
       'D:\FOLDER KULIAH\KULIAH SEMESTER 5\PEMROGRAMAN VISUAL 3\ProyekAk' +
       'hir\libmysql.dll'
-    Left = 48
-    Top = 104
+    Left = 120
+    Top = 40
   end
   object MainMenu1: TMainMenu
     Left = 48
     Top = 40
+    object Menu1: TMenuItem
+      Caption = 'Menu'
+      object DataUser1: TMenuItem
+        Caption = 'Data User'
+      end
+      object DataBarang1: TMenuItem
+        Caption = 'Data Barang'
+      end
+      object DataKategori1: TMenuItem
+        Caption = 'Data Kategori'
+        OnClick = DataKategori1Click
+      end
+      object DataCosutumer1: TMenuItem
+        Caption = 'Data Costumer'
+      end
+      object DataSupplier1: TMenuItem
+        Caption = 'Data Supplier'
+      end
+      object DataJual1: TMenuItem
+        Caption = 'Data Jual'
+      end
+      object DataBeli1: TMenuItem
+        Caption = 'Data Beli'
+      end
+      object DataDetailJual1: TMenuItem
+        Caption = 'Data Detail Jual'
+      end
+      object DataDetailBeli1: TMenuItem
+        Caption = 'Data Detail Beli'
+      end
+    end
+    object Logout1: TMenuItem
+      Caption = 'Logout'
+    end
   end
 end
