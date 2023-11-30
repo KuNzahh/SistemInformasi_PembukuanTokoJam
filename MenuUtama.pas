@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ZAbstractConnection, ZConnection, StdCtrls, Menus;
+  Dialogs, ZAbstractConnection, ZConnection, StdCtrls, Menus, ExtCtrls,
+  jpeg;
 
 type
   TForm2 = class(TForm)
@@ -22,6 +23,8 @@ type
     DataDetailJual1: TMenuItem;
     DataDetailBeli1: TMenuItem;
     Logout1: TMenuItem;
+    Label1: TLabel;
+    img1: TImage;
     procedure DataKategori1Click(Sender: TObject);
     procedure DataBarang1Click(Sender: TObject);
     procedure DataSupplier1Click(Sender: TObject);

@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset;
+  Dialogs, StdCtrls, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset,
+  jpeg, ExtCtrls;
 
 type
   TForm1 = class(TForm)
@@ -17,6 +18,7 @@ type
     LOGIN: TLabel;
     ZQuery1: TZQuery;
     dsUser: TDataSource;
+    img1: TImage;
     procedure btnLoginClick(Sender: TObject);
     procedure btnRegisClick(Sender: TObject);
   private

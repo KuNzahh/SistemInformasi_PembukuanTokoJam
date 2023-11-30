@@ -4,7 +4,7 @@ object Form4: TForm4
   Width = 695
   Height = 481
   Caption = 'Data Kategori'
-  Color = clBtnFace
+  Color = clGradientInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -119,6 +119,7 @@ object Form4: TForm4
     Height = 25
     Caption = 'Laporan'
     TabOrder = 7
+    OnClick = btn6Click
   end
   object DBGrid1: TDBGrid
     Left = 112
@@ -156,5 +157,191 @@ object Form4: TForm4
     DataSet = ZQuery1
     Left = 56
     Top = 200
+  end
+  object frxDBkategori: TfrxDBDataset
+    UserName = 'frxDBkategori'
+    CloseDataSource = False
+    DataSet = ZQuery1
+    Left = 528
+    Top = 144
+  end
+  object frxRkategori: TfrxReport
+    Version = '4.0.11'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 45260.914258368060000000
+    ReportOptions.LastChange = 45260.932909606480000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 528
+    Top = 200
+    Datasets = <
+      item
+        DataSet = frxDBkategori
+        DataSetName = 'frxDBkategori'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+      object ReportTitle1: TfrxReportTitle
+        Height = 64.252010000000000000
+        Top = 18.897650000000000000
+        Width = 793.701300000000000000
+        object Memo1: TfrxMemoView
+          Left = 298.582870000000000000
+          Top = 22.677180000000000000
+          Width = 215.433210000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'LAPORAN KATEGORI')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object PageHeader1: TfrxPageHeader
+        Height = 22.677180000000000000
+        Top = 105.826840000000000000
+        Width = 793.701300000000000000
+        object Memo4: TfrxMemoView
+          Left = 192.756030000000000000
+          Width = 132.283550000000000000
+          Height = 22.677180000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Nama Kategori')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo5: TfrxMemoView
+          Left = 325.039580000000000000
+          Width = 313.700990000000000000
+          Height = 22.677180000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Deskripsi')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo18: TfrxMemoView
+          Left = 158.740260000000000000
+          Width = 34.015770000000000000
+          Height = 22.677180000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'ID')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterData1: TfrxMasterData
+        Height = 26.456710000000000000
+        Top = 188.976500000000000000
+        Width = 793.701300000000000000
+        DataSet = frxDBkategori
+        DataSetName = 'frxDBkategori'
+        RowCount = 0
+        object Memo11: TfrxMemoView
+          Left = 192.756030000000000000
+          Width = 132.283550000000000000
+          Height = 26.456710000000000000
+          DataField = 'nm_kategori'
+          DataSet = frxDBkategori
+          DataSetName = 'frxDBkategori'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBkategori."nm_kategori"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo12: TfrxMemoView
+          Left = 325.039580000000000000
+          Width = 313.700990000000000000
+          Height = 26.456710000000000000
+          DataField = 'dekripsi'
+          DataSet = frxDBkategori
+          DataSetName = 'frxDBkategori'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBkategori."dekripsi"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo19: TfrxMemoView
+          Left = 158.740260000000000000
+          Width = 34.015770000000000000
+          Height = 26.456710000000000000
+          DataField = 'id'
+          DataSet = frxDBkategori
+          DataSetName = 'frxDBkategori'
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBkategori."id"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+    end
   end
 end

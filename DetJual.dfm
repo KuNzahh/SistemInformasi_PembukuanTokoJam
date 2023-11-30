@@ -1,10 +1,10 @@
 object Form9: TForm9
   Left = 395
   Top = 150
-  Width = 870
+  Width = 721
   Height = 450
   Caption = 'Data Detail Jual'
-  Color = clBtnFace
+  Color = clWhite
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -17,9 +17,9 @@ object Form9: TForm9
   object lbl1: TLabel
     Left = 288
     Top = 8
-    Width = 102
+    Width = 175
     Height = 31
-    Caption = 'Data Jual'
+    Caption = 'Data Detail Jual'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
@@ -170,6 +170,7 @@ object Form9: TForm9
     Height = 25
     Caption = 'Laporan'
     TabOrder = 5
+    OnClick = btn6Click
   end
   object edt1: TEdit
     Left = 200
@@ -242,5 +243,302 @@ object Form9: TForm9
     DataSet = ZQuery1
     Left = 560
     Top = 64
+  end
+  object frxDBdetjual: TfrxDBDataset
+    UserName = 'frxDBdetjual'
+    CloseDataSource = False
+    DataSet = ZQuery1
+    Left = 624
+    Top = 8
+  end
+  object frxRdetjual: TfrxReport
+    Version = '4.0.11'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 45260.914258368060000000
+    ReportOptions.LastChange = 45260.976548819450000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 624
+    Top = 64
+    Datasets = <
+      item
+        DataSet = frxDBdetjual
+        DataSetName = 'frxDBdetjual'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+      object ReportTitle1: TfrxReportTitle
+        Height = 64.252010000000000000
+        Top = 18.897650000000000000
+        Width = 793.701300000000000000
+        object Memo1: TfrxMemoView
+          Left = 298.582870000000000000
+          Top = 22.677180000000000000
+          Width = 215.433210000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'LAPORAN DETAIL JUAL')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object PageHeader1: TfrxPageHeader
+        Height = 22.677180000000000000
+        Top = 105.826840000000000000
+        Width = 793.701300000000000000
+        object Memo4: TfrxMemoView
+          Left = 151.181200000000000000
+          Width = 86.929190000000000000
+          Height = 22.677180000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'ID Jual')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo5: TfrxMemoView
+          Left = 238.110390000000000000
+          Width = 109.606370000000000000
+          Height = 22.677180000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'ID Barang')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo18: TfrxMemoView
+          Left = 117.165430000000000000
+          Width = 34.015770000000000000
+          Height = 22.677180000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'ID')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo2: TfrxMemoView
+          Left = 347.716760000000000000
+          Width = 128.504020000000000000
+          Height = 22.677180000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Jumlah')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo3: TfrxMemoView
+          Left = 578.268090000000000000
+          Width = 98.267780000000000000
+          Height = 22.677180000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Total')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo8: TfrxMemoView
+          Left = 476.220780000000000000
+          Width = 102.047310000000000000
+          Height = 22.677180000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Harga Jual')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterData1: TfrxMasterData
+        Height = 26.456710000000000000
+        Top = 188.976500000000000000
+        Width = 793.701300000000000000
+        DataSet = frxDBdetjual
+        DataSetName = 'frxDBdetjual'
+        RowCount = 0
+        object Memo11: TfrxMemoView
+          Left = 151.181200000000000000
+          Width = 86.929190000000000000
+          Height = 26.456710000000000000
+          DataField = 'jual_id'
+          DataSet = frxDBdetjual
+          DataSetName = 'frxDBdetjual'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBdetjual."jual_id"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo12: TfrxMemoView
+          Left = 238.110390000000000000
+          Width = 109.606370000000000000
+          Height = 26.456710000000000000
+          DataField = 'barang_id'
+          DataSet = frxDBdetjual
+          DataSetName = 'frxDBdetjual'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBdetjual."barang_id"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo19: TfrxMemoView
+          Left = 117.165430000000000000
+          Width = 34.015770000000000000
+          Height = 26.456710000000000000
+          DataField = 'id'
+          DataSet = frxDBdetjual
+          DataSetName = 'frxDBdetjual'
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBdetjual."id"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo6: TfrxMemoView
+          Left = 347.716760000000000000
+          Width = 128.504020000000000000
+          Height = 26.456710000000000000
+          DataField = 'jumlah'
+          DataSet = frxDBdetjual
+          DataSetName = 'frxDBdetjual'
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBdetjual."jumlah"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo7: TfrxMemoView
+          Left = 476.220780000000000000
+          Width = 102.047310000000000000
+          Height = 26.456710000000000000
+          DataField = 'harga_jual'
+          DataSet = frxDBdetjual
+          DataSetName = 'frxDBdetjual'
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBdetjual."harga_jual"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo9: TfrxMemoView
+          Left = 578.268090000000000000
+          Width = 98.267780000000000000
+          Height = 26.456710000000000000
+          DataField = 'total_jual'
+          DataSet = frxDBdetjual
+          DataSetName = 'frxDBdetjual'
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Times New Roman'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[frxDBdetjual."total_jual"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+    end
   end
 end

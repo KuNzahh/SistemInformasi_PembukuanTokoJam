@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset, StdCtrls,
-  Grids, DBGrids;
+  Grids, DBGrids, frxClass, frxDBSet;
 
 type
   TForm11 = class(TForm)
@@ -28,6 +28,8 @@ type
     dsCostumer: TDataSource;
     DBGrid1: TDBGrid;
     btn7: TButton;
+    frxDBcostumer: TfrxDBDataset;
+    frxRcostumer: TfrxReport;
     
     procedure btn7Click(Sender: TObject);
     procedure posisiawal;
@@ -41,6 +43,7 @@ type
     procedure btn5Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure FormShow(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,6 +62,7 @@ uses MenuUtama;
 
 procedure TForm11.btn7Click(Sender: TObject);
 begin
+  Hide;
  form2.show;
 end;
 
@@ -201,6 +205,11 @@ end;
 procedure TForm11.FormShow(Sender: TObject);
 begin
  posisiawal;
+end;
+
+procedure TForm11.btn6Click(Sender: TObject);
+begin
+  frxRcostumer.ShowReport();
 end;
 
 end.
