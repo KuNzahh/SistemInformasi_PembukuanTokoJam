@@ -50,6 +50,7 @@ object Form2: TForm2
       Caption = 'Menu'
       object DataUser1: TMenuItem
         Caption = 'Data User'
+        OnClick = DataUser1Click
       end
       object DataBarang1: TMenuItem
         Caption = 'Data Barang'

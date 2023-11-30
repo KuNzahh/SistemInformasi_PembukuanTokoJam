@@ -145,6 +145,7 @@ object Form4: TForm4
   end
   object ZQuery1: TZQuery
     Connection = Form2.ZConnection1
+    Active = True
     SQL.Strings = (
       'SELECT * from kategori')
     Params = <>

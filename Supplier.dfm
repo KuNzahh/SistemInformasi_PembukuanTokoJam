@@ -1,8 +1,8 @@
 object Form6: TForm6
   Left = 372
   Top = 164
-  Width = 618
-  Height = 448
+  Width = 647
+  Height = 461
   Caption = 'Data Supplier'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -29,7 +29,7 @@ object Form6: TForm6
   end
   object lbl1: TLabel
     Left = 40
-    Top = 88
+    Top = 72
     Width = 110
     Height = 21
     Caption = 'Nama Supplier'
@@ -55,10 +55,23 @@ object Form6: TForm6
   end
   object Label3: TLabel
     Left = 40
-    Top = 168
+    Top = 160
     Width = 33
     Height = 21
     Caption = 'Telp'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 40
+    Top = 104
+    Width = 132
+    Height = 21
+    Caption = 'Nama Perusahaan'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -100,14 +113,7 @@ object Form6: TForm6
     Height = 25
     Caption = 'Hapus'
     TabOrder = 3
-  end
-  object btn5: TButton
-    Left = 488
-    Top = 304
-    Width = 75
-    Height = 25
-    Caption = 'Batal'
-    TabOrder = 4
+    OnClick = btn4Click
   end
   object btn6: TButton
     Left = 488
@@ -115,42 +121,28 @@ object Form6: TForm6
     Width = 75
     Height = 25
     Caption = 'Laporan'
-    TabOrder = 5
-  end
-  object DBGrid1: TDBGrid
-    Left = 40
-    Top = 208
-    Width = 417
-    Height = 161
-    DataSource = dsKategori
-    TabOrder = 6
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-    OnCellClick = DBGrid1CellClick
+    TabOrder = 4
   end
   object edt1: TEdit
     Left = 192
-    Top = 88
+    Top = 72
     Width = 265
     Height = 21
-    TabOrder = 7
+    TabOrder = 5
   end
   object edt2: TEdit
     Left = 192
-    Top = 128
+    Top = 104
     Width = 265
     Height = 21
-    TabOrder = 8
+    TabOrder = 6
   end
   object edt3: TEdit
     Left = 192
-    Top = 168
+    Top = 136
     Width = 257
     Height = 21
-    TabOrder = 9
+    TabOrder = 7
   end
   object btn7: TButton
     Left = 32
@@ -158,17 +150,47 @@ object Form6: TForm6
     Width = 75
     Height = 25
     Caption = '<< Kembali'
+    TabOrder = 8
+  end
+  object DBGrid1: TDBGrid
+    Left = 24
+    Top = 213
+    Width = 457
+    Height = 153
+    DataSource = dsSupplier
+    TabOrder = 9
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
+  end
+  object edt4: TEdit
+    Left = 192
+    Top = 168
+    Width = 265
+    Height = 21
     TabOrder = 10
+  end
+  object btn5: TButton
+    Left = 488
+    Top = 304
+    Width = 75
+    Height = 25
+    Caption = 'Batal'
+    TabOrder = 11
   end
   object ZQuery1: TZQuery
     Connection = Form2.ZConnection1
+    Active = True
     SQL.Strings = (
-      'SELECT * from kategori')
+      'SELECT * from supplier')
     Params = <>
     Left = 496
     Top = 16
   end
-  object dsKategori: TDataSource
+  object dsSupplier: TDataSource
     DataSet = ZQuery1
     Left = 496
     Top = 72

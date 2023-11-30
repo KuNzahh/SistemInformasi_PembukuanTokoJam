@@ -251,6 +251,7 @@ object Form5: TForm5
   end
   object ZQuery1: TZQuery
     Connection = Form2.ZConnection1
+    Active = True
     SQL.Strings = (
       'SELECT * from barang')
     Params = <>

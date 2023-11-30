@@ -25,6 +25,7 @@ type
     procedure DataKategori1Click(Sender: TObject);
     procedure DataBarang1Click(Sender: TObject);
     procedure DataSupplier1Click(Sender: TObject);
+    procedure DataUser1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,7 +37,7 @@ var
 
 implementation
 
-uses Kategori, Barang, Supplier;
+uses Kategori, Barang, Supplier, Costumer;
 
 {$R *.dfm}
 
@@ -47,12 +48,20 @@ end;
 
 procedure TForm2.DataBarang1Click(Sender: TObject);
 begin
+  hide;
   Form5.show;
 end;
 
 procedure TForm2.DataSupplier1Click(Sender: TObject);
 begin
+  hide;
   Form6.show;
+end;
+
+procedure TForm2.DataUser1Click(Sender: TObject);
+begin
+  hide ;
+  Form11.show;
 end;
 
 end.
