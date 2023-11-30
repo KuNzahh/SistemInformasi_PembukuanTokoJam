@@ -26,6 +26,11 @@ type
     procedure DataBarang1Click(Sender: TObject);
     procedure DataSupplier1Click(Sender: TObject);
     procedure DataUser1Click(Sender: TObject);
+    procedure DataCosutumer1Click(Sender: TObject);
+    procedure DataJual1Click(Sender: TObject);
+    procedure DataBeli1Click(Sender: TObject);
+    procedure DataDetailJual1Click(Sender: TObject);
+    procedure DataDetailBeli1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,7 +42,8 @@ var
 
 implementation
 
-uses Kategori, Barang, Supplier, Costumer;
+uses Kategori, Barang, Supplier, Costumer, User, Jual, Beli, DetJual,
+  DetBeli;
 
 {$R *.dfm}
 
@@ -48,20 +54,44 @@ end;
 
 procedure TForm2.DataBarang1Click(Sender: TObject);
 begin
-  hide;
   Form5.show;
 end;
 
 procedure TForm2.DataSupplier1Click(Sender: TObject);
 begin
-  hide;
   Form6.show;
 end;
 
 procedure TForm2.DataUser1Click(Sender: TObject);
 begin
-  hide ;
-  Form11.show;
+  Form12.show;
+end;
+
+procedure TForm2.DataCosutumer1Click(Sender: TObject);
+begin
+ Form11.Show;
+end;
+
+procedure TForm2.DataJual1Click(Sender: TObject);
+begin
+  Form7.show;
+end;
+
+procedure TForm2.DataBeli1Click(Sender: TObject);
+begin
+   Form8.Show;
+end;
+
+procedure TForm2.DataDetailJual1Click(Sender: TObject);
+begin
+   Form9.Show;
+end;
+
+
+
+procedure TForm2.DataDetailBeli1Click(Sender: TObject);
+begin
+   Form10.Show;
 end;
 
 end.

@@ -39,6 +39,7 @@ type
     procedure DBGrid1CellClick(Column: TColumn);
     procedure btn4Click(Sender: TObject);
     procedure btn5Click(Sender: TObject);
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,13 +52,16 @@ var
 
 implementation
 
+uses MenuUtama;
+
 {$R *.dfm}
 
 procedure TForm6.editbersih;
 begin
-  edt1.Enabled:= False;
-  edt2.Enabled:= False;
-  edt3.Enabled:= False;
+  edt1.Text:= '';
+  edt2.Text:= '';
+  edt3.Text:= '';
+  edt4.Text:= '';
 end;
 
 procedure TForm6.editdisable;
@@ -65,6 +69,7 @@ begin
   edt1.Enabled:= False;
   edt2.Enabled:= False;
   edt3.Enabled:= False;
+  edt4.Enabled:= False;
 end;
 
 procedure TForm6.editenable;
@@ -72,6 +77,7 @@ begin
   edt1.Enabled:= True;
   edt2.Enabled:= True;
   edt3.Enabled:= True;
+  edt4.Enabled:= True;
 end;
 
 procedure TForm6.FormShow(Sender: TObject);
@@ -91,13 +97,13 @@ end;
 
 procedure TForm6.btn1Click(Sender: TObject);
 begin
-    editbersih;
+  editbersih;
+  editenable;
   btn1.Enabled:= True;
   btn2.Enabled:= True;
   btn3.Enabled:= False;
   btn4.Enabled:= False;
   btn5.Enabled:= True;
-editenable;
 end;
 
 procedure TForm6.btn2Click(Sender: TObject);
@@ -184,6 +190,11 @@ end;
 procedure TForm6.btn5Click(Sender: TObject);
 begin
   posisiawal;
+end;
+
+procedure TForm6.btn7Click(Sender: TObject);
+begin
+  form2.show;
 end;
 
 end.

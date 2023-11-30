@@ -1,6 +1,6 @@
 object Form6: TForm6
-  Left = 372
-  Top = 164
+  Left = 245
+  Top = 167
   Width = 647
   Height = 461
   Caption = 'Data Supplier'
@@ -151,6 +151,7 @@ object Form6: TForm6
     Height = 25
     Caption = '<< Kembali'
     TabOrder = 8
+    OnClick = btn7Click
   end
   object DBGrid1: TDBGrid
     Left = 24
@@ -180,6 +181,7 @@ object Form6: TForm6
     Height = 25
     Caption = 'Batal'
     TabOrder = 11
+    OnClick = btn5Click
   end
   object ZQuery1: TZQuery
     Connection = Form2.ZConnection1

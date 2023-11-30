@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2023 at 02:22 AM
+-- Generation Time: Nov 30, 2023 at 11:13 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -42,7 +42,11 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id`, `kategori_id`, `barcode`, `nm_barang`, `stok`, `harga_jual`, `harga_beli`) VALUES
-(1, 1, 112, 'Casio', '10', 200000, 150000);
+(1, 1, 112, 'Casio', '10', 200000, 150000),
+(3, 2, 212, 'G-shock', '20', 500000, 200000),
+(4, 3, 324, 'Alexander christine', '21', 1000000, 820000),
+(5, 4, 324, 'cardif', '12', 150000, 100000),
+(7, 5, 425, 'iwatch', '2', 3000000, 2800000);
 
 -- --------------------------------------------------------
 
@@ -69,9 +73,17 @@ CREATE TABLE `costumer` (
   `id` int(5) NOT NULL,
   `nm_costumer` varchar(20) NOT NULL,
   `jk` enum('Laki-laki','Perempuan') NOT NULL,
-  `alamat` int(200) NOT NULL,
+  `alamat` varchar(200) NOT NULL,
   `telp` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `costumer`
+--
+
+INSERT INTO `costumer` (`id`, `nm_costumer`, `jk`, `alamat`, `telp`) VALUES
+(1, 'Sukma', 'Laki-laki', '0', 2147483621),
+(3, 'Gema', 'Perempuan', '0', 223);
 
 -- --------------------------------------------------------
 
@@ -119,6 +131,14 @@ CREATE TABLE `jual` (
   `kembali` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `jual`
+--
+
+INSERT INTO `jual` (`id`, `cost_id`, `tgl_jual`, `bulan_jual`, `total`, `bayar`, `kembali`) VALUES
+(1, 1, '2023-10-16', 'Oktober', 200000, 200000, 0),
+(5, 3, '2023-06-12', 'Juni', 223000, 250000, 27000);
+
 -- --------------------------------------------------------
 
 --
@@ -136,7 +156,12 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id`, `nm_kategori`, `dekripsi`) VALUES
-(1, 'Jam Tangan', 'Jam yang diletakkan di tangan');
+(1, 'Jam Tangan', 'Jam yang diletakkan di tangan'),
+(2, '2324', 'Noor'),
+(3, 'Jam Gusi', 'Jam untuk gusi'),
+(4, 'Jam Hias', 'Hisan tangan'),
+(5, 'Jam travel', 'Untuk travel'),
+(6, 'Jam Rumahan', 'Jam untuk dirumah');
 
 -- --------------------------------------------------------
 
@@ -147,9 +172,18 @@ INSERT INTO `kategori` (`id`, `nm_kategori`, `dekripsi`) VALUES
 CREATE TABLE `supplier` (
   `id` int(5) NOT NULL,
   `nm_supplier` varchar(20) NOT NULL,
-  `alamat` text NOT NULL,
+  `nm_perusahaan` varchar(20) NOT NULL,
+  `alamat` varchar(20) NOT NULL,
   `telp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `supplier`
+--
+
+INSERT INTO `supplier` (`id`, `nm_supplier`, `nm_perusahaan`, `alamat`, `telp`) VALUES
+(4, 'Noor Azijah', 'PT.PAMA JAYA', 'JL.Simanjuntak', '0942314243    '),
+(6, 'Rianor', 'PT.Anugrah', 'Jl.Sejahtera', '0843424352 ');
 
 -- --------------------------------------------------------
 
@@ -174,7 +208,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nik`, `nm_lengkap`, `username`, `password`, `jk`, `telp`, `email`, `alamat`) VALUES
-(1, '265332851413', 'Azijah', 'Azijah', '12345678', 'Perempuan', '081649334151', 'noorazijah444@gmail.com', 'Jl.Keramat Rt.11 RW.04');
+(1, '265332851413', 'Azijah', 'Azijah', '12345678', 'Perempuan', '081649334151', 'noorazijah444@gmail.com', 'Jl.Keramat Rt.11 RW.04'),
+(3, '2142', 'Malida', 'Mamauimut', '12345678', 'Perempuan', '0424243525', 'mau@gmailcom', 'Jl.Soekarno'),
+(6, '232342', 'Azijah', '123', '123', '', 'Perempuan', 'Azijah@gmail.com', 'Jl.Sejahtera');
 
 --
 -- Indexes for dumped tables
@@ -249,7 +285,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `beli`
@@ -261,7 +297,7 @@ ALTER TABLE `beli`
 -- AUTO_INCREMENT for table `costumer`
 --
 ALTER TABLE `costumer`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `detail_beli`
@@ -279,25 +315,25 @@ ALTER TABLE `detail_jual`
 -- AUTO_INCREMENT for table `jual`
 --
 ALTER TABLE `jual`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

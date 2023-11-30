@@ -84,8 +84,6 @@ begin
   edt2.Enabled:= True;
 end;
 
-
-
 procedure TForm4.btn1Click(Sender: TObject);
 begin
  editbersih;
@@ -101,14 +99,14 @@ end;
 procedure TForm4.btn2Click(Sender: TObject);
 begin
  if(edt1.Text = '')or(edt2.Text = '')then
-begin
-  ShowMessage('DATA TIDAK BOLEH KOSONG !');
-end else
+  begin
+    ShowMessage('DATA TIDAK BOLEH KOSONG !');
+  end else
 if(ZQuery1.Locate('nm_kategori',edt1.Text,[]))then
-begin
-  ShowMessage('Kategori sudah ada');
-  posisiawal;
-end else
+  begin
+    ShowMessage('Kategori sudah ada');
+    posisiawal;
+  end else
 begin
 ZQuery1.sql.clear;
 ZQuery1.sql.Add('insert into kategori values(null,"'+edt1.Text+'","'+edt2.text+'")');
@@ -146,7 +144,7 @@ id:=DBGrid1.DataSource.DataSet.FieldByName('id').AsString;
 ZQuery1.SQL.Clear;
 ZQuery1.SQL.Add('Update kategori set nm_kategori= "'+edt1.Text+'", dekripsi = "'+edt2.Text+'" where id ="'+id+'"');
 ZQuery1.ExecSQL;
-ShowMessage('DATA BERHASIL DIUPDATE!'); 
+ShowMessage('DATA BERHASIL DIUPDATE!');
 
 ZQuery1.SQL.Clear;
 ZQuery1.SQL.Add('select * from kategori');

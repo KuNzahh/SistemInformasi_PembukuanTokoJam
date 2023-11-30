@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 481
-  Top = 190
+  Left = 301
+  Top = 169
   Width = 674
   Height = 371
   Caption = 'LOGIN'
@@ -16,23 +16,41 @@ object Form1: TForm1
   object USERNAME: TLabel
     Left = 184
     Top = 88
-    Width = 54
-    Height = 13
+    Width = 85
+    Height = 19
     Caption = 'USERNAME'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
   end
   object Password: TLabel
     Left = 184
     Top = 136
-    Width = 57
-    Height = 13
+    Width = 85
+    Height = 19
     Caption = 'PASSWORD'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
   end
   object LOGIN: TLabel
-    Left = 304
+    Left = 256
     Top = 32
-    Width = 91
-    Height = 13
+    Width = 147
+    Height = 19
     Caption = 'MASUK PENGGUNA'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
   end
   object btnRegis: TButton
     Left = 216
@@ -40,6 +58,12 @@ object Form1: TForm1
     Width = 97
     Height = 33
     Caption = 'DAFTAR'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     OnClick = btnRegisClick
   end
@@ -49,21 +73,39 @@ object Form1: TForm1
     Width = 97
     Height = 33
     Caption = 'MASUK'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
     OnClick = btnLoginClick
   end
   object edtUsername: TEdit
-    Left = 280
+    Left = 320
     Top = 88
     Width = 193
-    Height = 21
+    Height = 27
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
   end
   object edtPassword: TEdit
-    Left = 280
+    Left = 320
     Top = 136
     Width = 193
-    Height = 21
+    Height = 27
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 3
   end
   object ZQuery1: TZQuery

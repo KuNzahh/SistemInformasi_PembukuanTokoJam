@@ -1,8 +1,8 @@
 object Form3: TForm3
-  Left = 266
-  Top = 166
+  Left = 447
+  Top = 159
   Width = 746
-  Height = 396
+  Height = 394
   Caption = 'DAFTAR'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
