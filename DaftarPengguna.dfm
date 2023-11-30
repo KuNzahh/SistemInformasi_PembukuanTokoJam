@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = 447
-  Top = 159
+  Left = 368
+  Top = 158
   Width = 746
   Height = 394
   Caption = 'DAFTAR'

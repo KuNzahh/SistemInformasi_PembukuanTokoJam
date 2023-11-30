@@ -87,6 +87,7 @@ object Form2: TForm2
     end
     object Logout1: TMenuItem
       Caption = 'Logout'
+      OnClick = Logout1Click
     end
   end
 end

@@ -31,6 +31,7 @@ type
     procedure DataBeli1Click(Sender: TObject);
     procedure DataDetailJual1Click(Sender: TObject);
     procedure DataDetailBeli1Click(Sender: TObject);
+    procedure Logout1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -92,6 +93,11 @@ end;
 procedure TForm2.DataDetailBeli1Click(Sender: TObject);
 begin
    Form10.Show;
+end;
+
+procedure TForm2.Logout1Click(Sender: TObject);
+begin
+  Close
 end;
 
 end.

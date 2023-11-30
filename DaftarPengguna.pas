@@ -86,7 +86,6 @@ begin
   ShowMessage('Alamat TIDAK BOLEH KOSONG!');
   end else
 
-
   begin
  ZQuery1.SQL.Clear;
  ZQuery1.SQL.Add
