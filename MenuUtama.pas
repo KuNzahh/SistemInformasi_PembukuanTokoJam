@@ -23,6 +23,8 @@ type
     DataDetailBeli1: TMenuItem;
     Logout1: TMenuItem;
     procedure DataKategori1Click(Sender: TObject);
+    procedure DataBarang1Click(Sender: TObject);
+    procedure DataSupplier1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,13 +36,23 @@ var
 
 implementation
 
-uses Kategori;
+uses Kategori, Barang, Supplier;
 
 {$R *.dfm}
 
 procedure TForm2.DataKategori1Click(Sender: TObject);
 begin
   Form4.show;
+end;
+
+procedure TForm2.DataBarang1Click(Sender: TObject);
+begin
+  Form5.show;
+end;
+
+procedure TForm2.DataSupplier1Click(Sender: TObject);
+begin
+  Form6.show;
 end;
 
 end.

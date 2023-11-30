@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 282
-  Top = 191
+  Left = 360
+  Top = 190
   Width = 795
   Height = 423
   Caption = 'Menu Utama'
@@ -53,6 +53,7 @@ object Form2: TForm2
       end
       object DataBarang1: TMenuItem
         Caption = 'Data Barang'
+        OnClick = DataBarang1Click
       end
       object DataKategori1: TMenuItem
         Caption = 'Data Kategori'
@@ -63,6 +64,7 @@ object Form2: TForm2
       end
       object DataSupplier1: TMenuItem
         Caption = 'Data Supplier'
+        OnClick = DataSupplier1Click
       end
       object DataJual1: TMenuItem
         Caption = 'Data Jual'
