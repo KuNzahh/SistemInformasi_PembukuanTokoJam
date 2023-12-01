@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2023 at 11:13 AM
+-- Generation Time: Dec 01, 2023 at 09:47 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -63,6 +63,14 @@ CREATE TABLE `beli` (
   `bayar` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `beli`
+--
+
+INSERT INTO `beli` (`id`, `suplier_id`, `bulan_beli`, `tgl_beli`, `total`, `bayar`) VALUES
+(2, 4, 'Agustus', '2023-08-12', 5000000, 5000000),
+(4, 6, 'Juli', '2023-07-12', 500000, 500000);
+
 -- --------------------------------------------------------
 
 --
@@ -100,6 +108,14 @@ CREATE TABLE `detail_beli` (
   `total_beli` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `detail_beli`
+--
+
+INSERT INTO `detail_beli` (`id`, `beli_id`, `barang_id`, `jumlah`, `harga_beli`, `total_beli`) VALUES
+(1, 2, 7, 2, 2000000, 2000000),
+(2, 4, 3, 5, 20000000, 20000000);
+
 -- --------------------------------------------------------
 
 --
@@ -114,6 +130,14 @@ CREATE TABLE `detail_jual` (
   `harga_jual` int(20) NOT NULL,
   `total_jual` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `detail_jual`
+--
+
+INSERT INTO `detail_jual` (`id`, `jual_id`, `barang_id`, `jumlah`, `harga_jual`, `total_jual`) VALUES
+(1, 1, 4, 3, 200000, 600000),
+(2, 5, 5, 2, 3000000, 6000000);
 
 -- --------------------------------------------------------
 
@@ -210,7 +234,11 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `nik`, `nm_lengkap`, `username`, `password`, `jk`, `telp`, `email`, `alamat`) VALUES
 (1, '265332851413', 'Azijah', 'Azijah', '12345678', 'Perempuan', '081649334151', 'noorazijah444@gmail.com', 'Jl.Keramat Rt.11 RW.04'),
 (3, '2142', 'Malida', 'Mamauimut', '12345678', 'Perempuan', '0424243525', 'mau@gmailcom', 'Jl.Soekarno'),
-(6, '232342', 'Azijah', '123', '123', '', 'Perempuan', 'Azijah@gmail.com', 'Jl.Sejahtera');
+(6, '232342', 'Rahman', '321', '321', 'Laki-laki', '08435452535', 'aman@gmail.com', 'Jl.Sejahtera'),
+(7, '32324', 'Amanah', '123', '123', 'Perempuan', '32321', 'manah@gmail.com', 'Jl.Kosmetik'),
+(8, '143445', 'Noor Azijah', 'zijah', '061002', 'Perempuan', '081649334151', 'zija', 'Jl.keramat'),
+(9, '3232', 'Noor', 'kunzah', '123', 'Perempuan', '09321832', 'zah@gmail.com', 'jl.sukses'),
+(10, '2124', 'Rian', '123', '123', 'Laki-laki', '03243', '0832423424', 'Jl.Aman');
 
 --
 -- Indexes for dumped tables
@@ -291,7 +319,7 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `beli`
 --
 ALTER TABLE `beli`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `costumer`
@@ -303,13 +331,13 @@ ALTER TABLE `costumer`
 -- AUTO_INCREMENT for table `detail_beli`
 --
 ALTER TABLE `detail_beli`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `detail_jual`
 --
 ALTER TABLE `detail_jual`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jual`
@@ -333,7 +361,7 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
