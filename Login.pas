@@ -21,6 +21,7 @@ type
     img1: TImage;
     procedure btnLoginClick(Sender: TObject);
     procedure btnRegisClick(Sender: TObject);
+    procedure editbersih;
   private
     { Private declarations }
   public
@@ -62,13 +63,19 @@ begin
 
     end;
 
-
+editbersih;
 end;
 
 
 procedure TForm1.btnRegisClick(Sender: TObject);
 begin
     Form3.Show;
+end;
+
+procedure TForm1.editbersih;
+begin
+ edtUsername.Text := '';
+ edtPassword.Text := '';
 end;
 
 end.

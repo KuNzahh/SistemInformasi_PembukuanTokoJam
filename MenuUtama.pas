@@ -47,7 +47,7 @@ var
 implementation
 
 uses Kategori, Barang, Supplier, Costumer, User, Jual, Beli, DetJual,
-  DetBeli;
+  DetBeli, Login;
 
 {$R *.dfm}
 
@@ -100,7 +100,8 @@ end;
 
 procedure TForm2.Logout1Click(Sender: TObject);
 begin
-  Close
+  Hide;
+  Form1.Show;
 end;
 
 end.

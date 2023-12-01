@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset;
+  Dialogs, StdCtrls, DB, ZAbstractRODataset, ZAbstractDataset, ZDataset,
+  jpeg, ExtCtrls;
 
 type
   TForm3 = class(TForm)
@@ -28,7 +29,11 @@ type
     btnDaftar: TButton;
     ZQuery1: TZQuery;
     dsUser: TDataSource;
+    btn7: TButton;
+    img1: TImage;
     procedure btnDaftarClick(Sender: TObject);
+    procedure editbersih;
+    procedure btn7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -86,27 +91,49 @@ begin
   ShowMessage('Alamat TIDAK BOLEH KOSONG!');
   end else
 
+  if ZQuery1.Locate('username', edt3.Text, []) then
   begin
- ZQuery1.SQL.Clear;
- ZQuery1.SQL.Add
- ('insert into user values (null,"'+edt1.Text+'","'+edt2.Text+'","'+edt3.Text+'","'+edt4.Text+'","'+cbb1.Text+'","'+edt5.Text+'","'+edt6.Text+'","'+edt7.Text+'")');
- ZQuery1.ExecSQL;
-
- ZQuery1.SQL.Clear;
- ZQuery1.SQL.Add('select * from user');
- ZQuery1.Open;
- if (edt1.Text= '')or (edt2.Text ='')or(edt3.Text= '')or (cbb1.Text ='') then
-  begin
-  ShowMessage('INPUTAN WAJIB DIISI!');
+    ShowMessage('username sudah ada, buat username yang berbeda');
+    editbersih;
   end else
-  if edt1.Text = ZQuery1.Fields[1].AsString then
-  begin
-  ShowMessage('DATA TIDAK ADA PERUBAHAN');
-  end
-end;
-hide;
-Form1.show;
 
+  begin
+    ZQuery1.SQL.Clear;
+    ZQuery1.SQL.Add('insert into user values (null,"' + edt1.Text + '","' + edt2.Text + '","' + edt3.Text + '","' + edt4.Text + '","' + cbb1.Text + '","' + edt5.Text + '","' + edt6.Text + '","' + edt7.Text + '")');
+    ZQuery1.ExecSQL;
+
+    // Periksa apakah ada data yang diubah atau tidak
+    ZQuery1.SQL.Clear;
+    ZQuery1.SQL.Add('select * from user where username = "' + edt2.Text + '"');
+    ZQuery1.Open;
+    if ZQuery1.IsEmpty then
+    begin
+      ShowMessage('Data berhasil ditambahkan');
+    end
+    else
+    begin
+      ShowMessage('Data tidak mengalami perubahan');
+    end;
+  end;
+end;
+
+
+procedure TForm3.editbersih;
+begin
+edt1.Text := '';
+ edt2.Text := '';
+ edt3.Text := '';
+ edt4.Text := '';
+ edt5.Text := '';
+ edt6.Text := '';
+ edt7.Text := '';
+ cbb1.Text := '';
+end;
+
+procedure TForm3.btn7Click(Sender: TObject);
+begin
+  hide;
+  Form1.Show;
 end;
 
 end.
